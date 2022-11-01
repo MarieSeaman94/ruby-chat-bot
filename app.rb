@@ -46,7 +46,7 @@ def bot_jp_answer_to(message, user_name)
   elsif message.match?(/.*元気.*(？|\?｜か)/)
     "私は元気です、#{user_name}さん"
   elsif message.match?(/.*(le wagon|ワゴン|バゴン).*/i)
-    "#{user_name}さん... もしかして京都のLE WAGONプログラミング学校の話ですかね？ 素敵な画っこと思います！"
+    "#{user_name}さん... もしかして東京のLE WAGON batch #848の友達ですね？"
   elsif message.end_with?('?','？')
     "いい質問ですね、#{user_name}さん！"
   else
