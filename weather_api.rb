@@ -9,7 +9,7 @@ def fetch_weather(message)
   #  ^anything          ^will become the location
   location = message.match(/.*eather in (\w+).*/)[1]
 
-  # Coordinates from keyword
+  # Coordinates from keyword 
   coord = Geocoder.search(location).first.coordinates
   api_key = ENV["WEATHER_API"]
   url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{coord[0]}&lon=#{coord[1]}&exclude=current,minutely,hourly&appid=#{api_key}"
