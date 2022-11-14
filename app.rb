@@ -22,7 +22,7 @@ def bot_answer_to(message, user_name)
     # respond if a user says hello
     "Hello #{user_name}, how are you doing today?"
   elsif message.downcase.include?('how are you')
-    `I'm doing well! Thank you so much for asking #{user_name}`
+    "I'm doing well! Thank you so much for asking #{user_name}"
   elsif message.downcase.include?('weather in')
     # call weather API in weather_api.rb
     fetch_weather(message)
@@ -34,9 +34,9 @@ def bot_answer_to(message, user_name)
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
     # respond in japanese!
     bot_jp_answer_to(message, user_name)
-  elsif message.end_with?('?')
+  elsif message.end_with?('!')
     # respond if a user asks a question
-    "Good question, #{user_name}!"
+    "Oh wow, are you excited, #{user_name}?"
   else
     ["I couldn't agree more.", 'Great to hear that.', 'Interesting.'].sample
   end
