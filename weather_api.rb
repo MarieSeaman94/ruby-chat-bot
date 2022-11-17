@@ -16,7 +16,7 @@ def fetch_weather(message)
   begin
     data_serialized = URI.open(url).read
   rescue OpenURI::HTTPError => e
-    return { mostly: '', temps: '', report: 'No weather forecast for this city...', error: e }
+    return { mostly: '', temps: '', report: 'No weather forecast for this city...' }
   end
   data = JSON.parse(data_serialized)['daily'][0..3]
 
