@@ -12,8 +12,7 @@ def fetch_weather(message)
   # Coordinates from keyword
   coord = Geocoder.search(location).first.coordinates
   api_key = ENV["WEATHER_API"]
-  url = "https://api.openweathermap.org/data/2.5/weather?lat=#{coord[0]}&lon=#{coord[1]}&appid=#{api_key}"
-  #url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{coord[0]}&lon=#{coord[1]}&exclude=current,minutely,hourly&appid=#{api_key}"
+  url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{coord[0]}&lon=#{coord[1]}&exclude=current,minutely,hourly&appid=#{api_key}"
   begin
     data_serialized = URI.open(url).read
   rescue OpenURI::HTTPError => e
